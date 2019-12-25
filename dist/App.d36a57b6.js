@@ -33455,9 +33455,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const Pet = ({
   name,
   animal,
-  breed
+  breed,
+  media,
+  location,
+  id
 }) => {
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, name), _react.default.createElement("h2", null, animal), _react.default.createElement("h2", null, breed));
+  let hero = 'http://placecorgi.com/300/300';
+  /* if (media.length) {
+       hero = media[0].small;
+   }*/
+
+  return _react.default.createElement("a", {
+    href: `/details/${id}`,
+    className: "pet"
+  }, _react.default.createElement("div", {
+    className: "image-container"
+  }, _react.default.createElement("img", {
+    src: hero,
+    alt: name
+  })), _react.default.createElement("div", {
+    className: "info"
+  }, _react.default.createElement("h1", null, name), _react.default.createElement("h2", null, `${animal} - ${breed} - ${location}`)));
 };
 
 var _default = Pet;
@@ -33614,7 +33632,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49487" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49358" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
