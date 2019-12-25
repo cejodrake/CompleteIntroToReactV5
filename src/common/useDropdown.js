@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 
-
 const useDropdown = (label, defaultState, options) => {
 
     const [state, setState] = useState(defaultState);
@@ -16,7 +15,7 @@ const useDropdown = (label, defaultState, options) => {
                 onBlur={e => setState(e.target.value)}
                 disabled={options.length === 0}
             >
-                <option>all</option>
+                <option>All</option>
                 {options.map(item => (
                     <option key={item} value={item}>{item}</option>
                 ))}
