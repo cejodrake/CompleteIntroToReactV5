@@ -37,7 +37,7 @@ class Details extends React.Component {
         if (this.state.loading) {
             return <h1> Loading.... </h1>
         };
-        const { animal, breed, location, description, media, showModal } = this.state;
+        const { animal, name, breed, location, description, media, showModal } = this.state;
 
 
         return (
@@ -58,6 +58,7 @@ class Details extends React.Component {
                     showModal ? (
                         <Modal>
                             <div>
+
                                 <h1> Would you like to adopt {name} </h1>
                                 <div className="buttons">
                                     <button onClick={this.adopt}>Yes</button>
