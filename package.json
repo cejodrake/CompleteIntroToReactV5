@@ -4,15 +4,17 @@
     "description": "",
     "main": "App.js",
     "scripts": {
+        "build": "parcel build --public-url ./dist/ src/index.html",
         "clear-build-cache": "rm -rf .cache/ dist/",
         "dev": "parcel src/index.html",
         "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
         "format": "prettier --write \"src/**/*.{js,jsx}\"",
         "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+        "start": "npm -s run build && babel-node server/index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
-    "author": "",
+    "author": "Juan Carlos Calix with Flowing a course from  Front End Master ",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.7.7",
@@ -21,8 +23,8 @@
         "@babel/preset-react": "^7.7.4",
         "babel-eslint": "^10.0.3",
         "cross-env": "^6.0.3",
-        "eslint": "^6.7.2",
-        "eslint-config-prettier": "^6.7.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.9.0",
         "eslint-plugin-import": "^2.19.1",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-react": "^7.17.0",
@@ -31,10 +33,14 @@
         "prettier": "^1.19.1"
     },
     "dependencies": {
+        "@babel/node": "^7.7.7",
         "@emotion/babel-preset-css-prop": "^10.0.27",
         "@emotion/core": "^10.0.27",
         "@frontendmasters/pet": "^1.0.3",
         "@reach/router": "^1.2.1",
+        "babel-cli": "^6.26.0",
+        "babel-node": "0.0.1-security",
+        "express": "^4.17.1",
         "react": "^16.12.0",
         "react-dom": "^16.12.0"
     },
