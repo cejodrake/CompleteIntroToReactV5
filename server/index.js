@@ -22,15 +22,15 @@ app.use((req, res) => {
         </ServerLocation>
     );
 
-    /* const stream = renderToNodeStream(reactMarkup);
-     stream.pipe(
-         res,
-         { end: false }
-     );
-     stream.on("end", () => {
-         res.write(parts[1]);
-         res.end();
-     });*/
+    const stream = renderToNodeStream(reactMarkup);
+    stream.pipe(
+        res,
+        { end: false }
+    );
+    stream.on("end", () => {
+        res.write(parts[1]);
+        res.end();
+    });
 });
 
 console.log(`listening on ${PORT}`);
